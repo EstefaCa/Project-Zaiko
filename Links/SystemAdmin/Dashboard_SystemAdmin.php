@@ -37,6 +37,14 @@ if (!isset($_SESSION['Role_Role_id'])) {
                                 }
                     ?>
                     </p>
+                    <p><?php
+                    
+                    
+                    
+                    if($_SESSION['Role_Role_id']== 1){ echo 'Administrador de Sistemas';}
+                    
+                    
+                    ?></p>
                 </div>
                 <div class="Links">
                     <div class="Link"> 
@@ -76,6 +84,11 @@ if (!isset($_SESSION['Role_Role_id'])) {
                                     break;
                             }
                         ?>
+                        <a href="../../Forms/Users.php"><h2>Crear Usuarios</h2></a>
+                    </div>
+                    <div class="Link"> 
+                        <img src="../../Assets/img/Icons/Profile.svg" alt="">
+                        <a href="../../Functions/Show_Users/Show_Users.php"><h2>Usuarios</h2></a>
                     </div> 
                     <div class="Link"> 
                         <img src="../../Assets/img/Icons/Notifications.svg" alt="">
