@@ -1,16 +1,8 @@
-<?php
-session_start();
-if (isset($_SESSION['Users_name_user'],$_SESSION['Users_email'])){
-    header("Location: ../SystemAdmin/Dashboard_SystemAdmin.php"); 
-
-}
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Zaiko</title>
+	<title>Zaiko | Login</title>
 	<link rel="stylesheet" type="text/css" href="../../Assets/css/Login/Login.css">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +13,7 @@ if (isset($_SESSION['Users_name_user'],$_SESSION['Users_email'])){
 			<img src="../../Assets/img/bg.svg">
 		</div>
 		<div class="login-content">
-			<form action="" method="POST">
+			<form action="../SystemAdmin/Dashboard_SystemAdmin.php" method="post">
 				<img src="../../Assets/img/Avatar1.svg">
 				<h2 class="Title">Bienvenido</h2>
            		<div class="input-div one">
@@ -44,13 +36,6 @@ if (isset($_SESSION['Users_name_user'],$_SESSION['Users_email'])){
             	</div>
             	<a href="#" class="Lost">¿Olvidaste la contraseña?</a>
             	<input type="submit" class="btn" value="Siguiente">
-				<?php
-				if (isset($_POST['Users_name_user'],$_POST['Users_password'])) {
-					require_once "../../Connection/Connection.php";
-					require_once "../Login/Login_code.php";
-				}	
-
-				?>
             </form>
         </div>
     </div>

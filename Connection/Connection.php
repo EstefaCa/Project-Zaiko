@@ -5,5 +5,5 @@
  * @version 1.0
  * @return string configuración de la conexión
  */
-    $conexion_bd=new PDO('mysql:host=localhost;dbname=Zaiko_db','root','');
+    $conexion_bd=new PDO('mysql:host=localhost;dbname=zaiko_db','root','');
 ?>

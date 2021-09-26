@@ -6,6 +6,18 @@
 }
 
 /* Variables colores */
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../Fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+@font-face {
+    font-family: 'Raleway';
+    src: url('../Fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
 :root{
     --menutext: #f7f7f7;
     --border: #848483;
