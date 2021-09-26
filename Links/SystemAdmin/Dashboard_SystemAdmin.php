@@ -1,3 +1,11 @@
+<?php
+session_start();
+include_once '../Login/Seguridad.php';
+if (!isset($_SESSION['Role_Role_id'])) {
+    header("Location: ../../Index.php");
+    include_once '../Login/Logout.php';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +24,19 @@
             <div class="Dashboard">
                 <div class="User">
                     <img src="../../Assets/img/Avatar.svg" class="Profile">
-                    <h3>Name User</h3>
-                    <p>Position</p>
+                    <h3><?php   echo$_SESSION['Users_names'];?></h3>
+                    <p>
+                    <?php
+                            switch ($_SESSION['Role_Role_id']) {
+                                case $_SESSION['Role_Role_id'] == 1 :
+                                    echo 'Administrador de Sistemas';
+                                    break;
+                                case $_SESSION['Role_Role_id'] == 2 :
+                                    echo 'Admistrador de Dependencias';
+                                    break;
+                                }
+                    ?>
+                    </p>
                 </div>
                 <div class="Links">
                     <div class="Link"> 
@@ -34,11 +53,29 @@
                     </div>
                     <div class="Link"> 
                         <img src="../../Assets/img/Icons/Person-add.svg" alt="">
-                        <a href="CreateUsers.php"><h2>Crear Usuarios</h2></a>
+                        <?php
+                            switch ($_SESSION['Role_Role_id']) {
+                                case $_SESSION['Role_Role_id'] == 1 :
+                                    echo '<a href="../../Forms/Users.php"><h2>Crear Usuarios</h2></a>';
+                                    break;
+                                case $_SESSION['Role_Role_id'] == 2 :
+                                    echo '<a href="../../Forms/Users.php"><h2>Crear Sub-Dependencias</h2></a>';
+                                    break;
+                            }
+                        ?>
                     </div>
                     <div class="Link"> 
                         <img src="../../Assets/img/Icons/Profile.svg" alt="">
-                        <a href=""><h2>Perfil</h2></a>
+                        <?php
+                            switch ($_SESSION['Role_Role_id']) {
+                                case $_SESSION['Role_Role_id'] == 1 :
+                                    echo '<a href="../../Procedures/Select.php"><h2>Usuarios</h2></a>';
+                                    break;
+                                case $_SESSION['Role_Role_id'] == 2 :
+                                    echo '<a href="../../Procedures/Select.php"><h2>Administradores de Sub-Dependencias</h2></a>';
+                                    break;
+                            }
+                        ?>
                     </div> 
                     <div class="Link"> 
                         <img src="../../Assets/img/Icons/Notifications.svg" alt="">
@@ -46,17 +83,13 @@
                     </div>
                     <div class="Link"> 
                         <img src="../../Assets/img/Icons/Settings.svg" alt="">
-                        <a href=""><h2>Configuración</h2></a>
+                        <a href="../../Functions/Reset_Password/Reset_Password.php"><h2>Configuración</h2></a>
                     </div>
                     <div class="Link"> 
                         <img src="../../Assets/img/Icons/Exit.svg" alt="">
-                        <a href="../../Index.php"><h2>Cerrar sesión</h2></a>
+                        <a href="../Login/Logout.php?tk=<?php echo $_SESSION['token'];?>"><h2>Cerrar sesión</h2></a>
                     </div>
                 </div>
-            </div>   
-            <div class="Search-box">
-                <input type="text" placeholder="Toca para escribir">
-                    <img src="../../Assets/img/Icons/Search.svg" class="Search"> 
             </div>   
         </section>   
     </main>

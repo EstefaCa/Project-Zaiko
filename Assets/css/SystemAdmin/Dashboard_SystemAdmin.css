@@ -33,6 +33,10 @@
 ::-webkit-scrollbar-thumb:hover{
     background: var(--secondcolor);
 }
+body{
+    overflow-x: hidden;
+    user-select: none;
+}
 
 /* Dashboard */
 h1{
@@ -84,7 +88,7 @@ main{
     justify-content: space-evenly;
     text-align: center;
     background: linear-gradient(rgba(255,255,255),rgba(255,255,255));
-    margin-right: 76.5%;
+    margin-right: 81.5%;
     height: 100vh;
     outline: none;
 }
@@ -159,4 +163,3 @@ a:hover{
     bottom: 32px;
     left: 88%;
 }
-
