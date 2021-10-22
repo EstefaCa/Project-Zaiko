@@ -27,40 +27,44 @@
     --font_title: 'Quicksand';
     --font_others: 'Raleway';
 }
-
+.container{
+	height: 100vh;
+	width: 200vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .Title{
 	font-family: var(--font_title);
+	text-align: center;
+	margin-bottom: 15px;
+}
+.Zaiko{
+	margin-right: 60px;
+	margin-bottom: 100px;
+}
+.login-content{
+	margin-left: 60px;
+}
+.Title2 {
+    font-family: var(--font_title);
+    font-size: 100px;
+    color: var(--firstcolor);
+}
+.Slogan {
+    font-family: var(--font_title);
+    font-size: 30px;
+    color: var(--border);
+}
+.img{
+	display:block;
+margin:auto;
 }
 body{
     overflow-x: hidden;
     user-select: none;
-}
-.container{
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap :7rem;
-    padding: 0 2rem;
-}
-
-.img{
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	z-index:-2;
-}
-
-.login-content{
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	text-align: center;
-	margin-left: 40px;
-}
-
-.img img{
-	width: 500px;
+	font-family: var(--font_title);
+	justify-items: center;
 }
 
 form{
@@ -69,10 +73,10 @@ form{
 
 .login-content img{
 	height: 100px;
+	display: flex;
 }
 
 .login-content h2{
-	margin: 15px 0;
 	color: var(--texttitle);
 	font-size: 2.9rem;
 }
@@ -114,7 +118,7 @@ form{
 	color: var(--border);
 	font-size: 18px;
 	transition: .3s;
-	font-family: var(--font_others);
+	font-family: var(--font_title);
 }
 
 .input-div:before, .input-div:after{
@@ -191,8 +195,7 @@ a:hover{
 	background-size: 200%;
 	font-size: 1.2rem;
 	color: #fff;
-	font-family: var(--font_others) ;
-	text-transform: uppercase;
+	font-family: var(--font_title);
 	margin: 1rem 0;
 	cursor: pointer;
 	transition: .5s;
@@ -202,37 +205,119 @@ a:hover{
 }
 
 .Lost{
-	font-family: var(--font_others);
+	font-family: var(--font_title);
 }
-
-@media screen and (max-width: 1050px){
+@media screen and (max-width: 1300px) {
 	.container{
-		grid-gap: 5rem;
+		width: 196vh;
 	}
 }
-
-@media screen and (max-width: 1000px){
-	form{
-		width: 290px;
-	}
-
-	.login-content h2{
-        font-size: 2.4rem;
-        margin: 8px 0;
-	}
-
-	.img img{
-		width: 400px;
-	}
-}
-
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1250px) {
 	.container{
-		grid-template-columns: 1fr;
-		align-items: center;
+		width: 188.5vh;
 	}
-
-	.img{
+}
+@media screen and (max-width: 1200px) {
+	.container{
+		width: 181vh;
+	}
+}
+@media screen and (max-width: 1150px) {
+	.container{
+		width: 175.6vh;
+	}
+}
+@media screen and (max-width: 1100px) {
+	.container{
+		width: 167.9vh;
+	}
+}
+@media screen and (max-width: 1050px) {
+	.container{
+		width: 160.4vh;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.container{
+		width: 152.7vh;
+	}
+}
+@media screen and (max-width: 990px) {
+	.Title2{
+		font-size: 80px;
+	}
+	.Slogan{
+		font-size: 30px;
+	}
+	.container{
+		width: 151.4vh;
+	}
+	.Zaiko{
 		display: none;
+	}
+}
+@media screen and (max-width: 950px) {
+	.container{
+		width: 145vh;
+	}
+}
+@media screen and (max-width: 900px) {
+	.container{
+		width: 137.4vh;
+	}
+}
+@media screen and (max-width: 850px) {
+	.container{
+		width: 129.7vh;
+	}
+}
+@media screen and (max-width: 800px) {
+	.container{
+		width: 122.1vh;
+	}
+}
+@media screen and (max-width: 750px) {
+	.container{
+		width: 114.5vh;
+	}
+}
+@media screen and (max-width: 700px) {
+	.container{
+		width: 105.5vh;
+	}
+}
+@media screen and (max-width: 650px) {
+	.container{
+		width: 98vh;
+	}
+}
+@media screen and (max-width: 600px) {
+	.container{
+		width: 90.4vh;
+	}
+}
+@media screen and (max-width: 550px) {
+	.container{
+		width: 82.9vh;
+	}
+}
+@media screen and (max-width: 500px) {
+	.container{
+		width: 75.4vh;
+	}
+}
+@media screen and (max-width: 450px) {
+	.container{
+		width: 67.8vh;
+	}
+}
+@media screen and (max-width: 400px) {
+	.container{
+		width: 60.3vh;
+	}
+}
+@media screen and (max-width: 350px) {
+	.container{
+		width: 52.7vh;
 	}
 }
