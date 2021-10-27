@@ -13,7 +13,6 @@ if(!isset($_SESSION))
     if ($Sentencia->rowCount()>=1) {
         $fila = $Sentencia->fetch();
         $Users_names = $fila['Users_names'];
-        $Users_surname_one = $fila['Users_surname_one'];
         $Role_Role_id = $fila['Role_Role_id'];
     }
   }   
