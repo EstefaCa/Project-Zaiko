@@ -58,7 +58,7 @@ if(!isset($_SESSION))
             <ul class="sidebar-body-menu">
             <span class="system-menu__title">Inventarios</span>
                 <li>
-                    <a class="active" href="SystemAdmin.php"><span class="icon home" aria-hidden="true"></span>Inicio</a>
+                    <a class="active" href="SystemAdmin.php"><span class="icon home" aria-hidden="true"></span>Inicio A</a>
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">
