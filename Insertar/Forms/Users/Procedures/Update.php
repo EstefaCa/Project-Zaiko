@@ -1,32 +1,31 @@
 <?php
-// Recuperar datos
-    if(isset($GET['Users_id'])){
-        $Users_id=$GET['Users_id'];
-        $consulta=$conexion_bd->prepare("SELECT * FROM users WHERE Users_id=:Users_id");
-        $consulta->bindParam(":Users_id",$Users_id);
-        $consulta->execute();
+if (!isset($_POST['Users_id'])){
+	header('location: ../UsersUpdate.php');
+	} 
+    include '../../../../Connection/Connection.php';
+    $Users_id = $_POST['Users_id'];
+    $Users_names=$_POST['Users_names'];
+    $Users_names_two=$_POST['Users_names_two'];
+    $Users_surname_one=$_POST['Users_surname_one'];
+    $Users_surname_two=$_POST['Users_surname_two'];
+    $Users_telephone=$_POST['Users_telephone'];
+    $Users_address=$_POST['Users_address'];
+    $Users_number_dni= $_POST['Users_number_dni'];
+    $Users_city=$_POST['Users_city'];
+    $Users_name_user=$_POST['Users_name_user'];
+    $Users_email=$_POST['Users_email'];
 
-        if($consulta->rowCount()>=1){
-            $fila=$consulta->fetch(); 
-            echo '<form action="" method="post">
-            <input type="hidden" name="Users_id" value="'.$fila['Users_id'].'"></br>
-            <label for="">Nombre del usuario</label>
-                <input type="text" name="Users_names" value="'.$fila['Users_names'].'"></br>
-            <label for="">Primer apellido</label>
-                <input type="text" name="Users_surname_one" value="'.$fila['Users_surname_one'].'"></br>
-            <label for="">Segundo apellido</label>
-                <input type="text" name="Users_surname_two" value="'.$fila['Users_surname_two'].'"></br>
-            <label for="">Tipo de documento de identidad</label>    
-            <label for="">Correo</label>
-                <input type="text" name="Users_email" value="'.$fila['Users_email'].'"></br>
-            <label for="">Contraseña</label>
-                <input type="text" name="Users_password" value="'.$fila['Users_password'].'"></br>
-                <input type="submit" value="Guardar">
-        </form>';
-        }else {
-            echo "Ocurrió un error";
-        }
-    }else {
-        echo "Error no se pudo procesar la petición";
+    date_default_timezone_set('America/Bogota'); 
+    $DateAndTime = date('Y-m-d h:i:s', time());  
+
+
+    $sentencia = $conexion_bd-> prepare ("UPDATE users SET  Users_names=?,Users_names_two=?,Users_surname_one=?,Users_surname_two=?,Users_telephone=?,Users_address=?,Users_number_dni=?,Users_city=?,Users_name_user=?,Users_email=?, Users_date_of_modification=? WHERE Users_id = ?;");
+    $resultado = $sentencia->execute([ $Users_names,$Users_names_two,$Users_surname_one,$Users_surname_two,$Users_telephone,$Users_address,$Users_number_dni,$Users_city,$Users_name_user,$Users_email,$DateAndTime, $Users_id]);
+    if ($resultado === TRUE){
+    	header('location: ../../../../Links/SystemAdmin/SelectUsers.php ');
+    }else{
+    	echo "Error al Actualizar los Datos";
     }
-?>
+
+
+ ?>

@@ -1,10 +1,12 @@
 <?php
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+    include '../Login/Seguridad.php';
+} 
 if (isset($_SESSION['Users_name_user'],$_SESSION['Users_email'])){
     header("Location: Links/SystemAdmin/SystemAdmin.php"); 
-
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,6 +15,7 @@ if (isset($_SESSION['Users_name_user'],$_SESSION['Users_email'])){
 	<title>Zaiko</title>
 	<link rel="stylesheet" type="text/css" href="Assets/css/Login/Login.css">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<link rel="shortcut icon" href="Assets/img/svg/Logo.svg" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>

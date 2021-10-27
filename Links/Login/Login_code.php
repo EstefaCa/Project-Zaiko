@@ -1,6 +1,16 @@
 <?php
+
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+    include 'Seguridad.php';
+} 
+if (isset($_SESSION['Users_name_user'],$_SESSION['Users_email'])){
+    header("Location: ../SystemAdmin/SystemAdmin.php"); 
+}
 $Users_name_user=$_POST['Users_name_user'];
 $Users_password=md5($_POST['Users_password']);
+require_once '../../Connection/Connection.php';
 
 $consulta=$conexion_bd->prepare("SELECT * FROM users WHERE (Users_email=:Users_name_user OR Users_name_user=:Users_name_user)
 AND Users_password=:Users_password");
@@ -24,7 +34,7 @@ if ($consulta->rowCount()>=1) {
     
     switch ($_SESSION['Role_Role_id']) {
         case ($_SESSION['Role_Role_id'] == 1):
-            echo '<script>location.href="Links/SystemAdmin/SystemAdmin.php";</script>';
+            echo '<script>location.href="../SystemAdmin/SystemAdmin.php";</script>';
             // $_SESSION['token']=md5(uniqid(mt_rand(),true));
             break;
         case ($_SESSION['Role_Role_id'] == 2):
