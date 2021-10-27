@@ -57,7 +57,7 @@ if(!isset($_SESSION))
             <ul class="sidebar-body-menu">
             <span class="system-menu__title">Inventarios</span>
                 <li>
-                    <a class="active" href="SystemAdmin.php"><span class="icon home" aria-hidden="true"></span>Inicio</a>
+                    <a href="SystemAdmin.php"><span class="icon home" aria-hidden="true"></span>Inicio</a>
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">
@@ -72,7 +72,7 @@ if(!isset($_SESSION))
                             <a href="Inventories.php">Todos los inventarios</a>
                         </li>
                         <li>
-                            <a href="CreateUnits.php">Crear dependencia</a>
+                            <a  class="active" href="CreateUnits.php">Crear dependencia</a>
                         </li>
                     </ul>
                 </li>
@@ -86,7 +86,7 @@ if(!isset($_SESSION))
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="categories.html">Todos los préstamos</a>
+                            <a href="Loans.php">Todos los préstamos</a>
                         </li>
                         <li>
                           <a href="new-post.html">Crear préstamo</a>

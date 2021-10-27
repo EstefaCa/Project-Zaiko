@@ -89,7 +89,7 @@ if(!isset($_SESSION))
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="categories.html">Todos los préstamos</a>
+                            <a href="Loans.php">Todos los préstamos</a>
                         </li>
                         <li>
                           <a href="new-post.html">Crear préstamo</a>
@@ -109,7 +109,7 @@ if(!isset($_SESSION))
                             <a href="SelectUsers.php">Todos los usuarios</a>
                         </li>
                         <li>
-                            <a href="SelectUsersD.php">Desactivados</a>
+                            <a href="SelectUsersD.php" class="active">Desactivados</a>
                         </li>
                         <li>
                             <a href="media-02.html">Crear usuario</a>

@@ -75,7 +75,7 @@ if(!isset($_SESSION))
                             <a href="Inventories.php">Todos los inventarios</a>
                         </li>
                         <li>
-                            <a href="CreateUnit.php" class="active">Crear dependencia</a>
+                            <a href="CreateUnit.php">Crear dependencia</a>
                         </li>
                     </ul>
                 </li>
@@ -89,7 +89,7 @@ if(!isset($_SESSION))
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="categories.html">Todos los préstamos</a>
+                            <a href="Loans.php">Todos los préstamos</a>
                         </li>
                         <li>
                           <a href="new-post.html">Crear préstamo</a>
@@ -106,7 +106,7 @@ if(!isset($_SESSION))
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="SelectUsers.php">Todos los usuarios</a>
+                            <a href="SelectUsers.php" class="active">Todos los usuarios</a>
                         </li>
                         <li>
                             <a href="SelectUsersD.php">Desactivados</a>
@@ -220,112 +220,19 @@ if(!isset($_SESSION))
     </div>
   </div>
 </nav>
-    <!-- ! Main -->
-    <!-- <main class="main users chart-page" id="skip-target">
-      <div class="container">
-      <form action="" method="post">
-      <div>
-        <label for="">Nombre de la nueva dependencia</label>
-        <input type="text" name="Units_name" placeholder="Nombre dependencia">
-      </div>
-      <div>
-        <label for="">Número de identificación del usuario encargado</label>
-        <input type="text" name="Users_number_dni" placeholder="Id Usuario">
-      </div>
-      <div>
-        <input type="submit" value="Enviar">
-      </div>
+
       <?php 
         if(isset($_POST['Units_name'],$_POST['Users_number_dni'])){
           require_once '../../Connection/Connection.php';
           require_once 'CRUD/InsertUnits.php';
         }
       ?>
-    </form> -->
-
-        <!-- <div class="row stat-cards">
-              <div class="col-md-6 col-xl-3">
-                    <article class="stat-cards-item">
-                    <!-- <div class="stat-cards-icon primary">
-                        <i data-feather="bar-chart-2" aria-hidden="true"></i>
-                    </div> -->
-                    <!-- <div class="stat-cards-info">
-                        <p class="stat-cards-info__num"></p>
-                        <p class="stat-cards-info__title">Total visits</p>
-                        <p class="stat-cards-info__progress">
-                        <span class="stat-cards-info__profit success">
-                            <i data-feather="trending-up" aria-hidden="true"></i>4.07%
-                        </span>
-                        Last month
-                        </p>
-                    </div>
-                    </article>
-                </div>
-         
-          <div class="col-md-6 col-xl-3">
-            <article class="stat-cards-item">
-              <div class="stat-cards-icon warning">
-                <i data-feather="file" aria-hidden="true"></i>
-              </div>
-              <div class="stat-cards-info">
-                <p class="stat-cards-info__num">1478 286</p>
-                <p class="stat-cards-info__title">Total visits</p>
-                <p class="stat-cards-info__progress">
-                  <span class="stat-cards-info__profit success">
-                    <i data-feather="trending-up" aria-hidden="true"></i>0.24%
-                  </span>
-                  Last month
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <article class="stat-cards-item">
-              <div class="stat-cards-icon purple">
-                <i data-feather="file" aria-hidden="true"></i>
-              </div>
-              <div class="stat-cards-info">
-                <p class="stat-cards-info__num">1478 286</p>
-                <p class="stat-cards-info__title">Total visits</p>
-                <p class="stat-cards-info__progress">
-                  <span class="stat-cards-info__profit danger">
-                    <i data-feather="trending-down" aria-hidden="true"></i>1.64%
-                  </span>
-                  Last month
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <article class="stat-cards-item">
-              <div class="stat-cards-icon success">
-                <i data-feather="feather" aria-hidden="true"></i>
-              </div>
-              <div class="stat-cards-info">
-                <p class="stat-cards-info__num">1478 286</p>
-                <p class="stat-cards-info__title">Total visits</p>
-                <p class="stat-cards-info__progress">
-                  <span class="stat-cards-info__profit warning">
-                    <i data-feather="trending-up" aria-hidden="true"></i>0.00%
-                  </span>
-                  Last month
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>  -->
         <div class="row">
           <div class="col-lg-9">
             <div class="users-table table-wrapper">
               <table class="posts-table">
                 <thead>
                   <tr class="users-table-info">
-                    <!-- Checkbox -->
-                    <!-- <th>
-                      <label class="users-table__checkbox ms-20">
-                        <input type="checkbox" class="check-all">Thumbnail
-                      </label>
-                    </th> -->
                     <th>Número Documento</th>
                     <th>Nombre</th>
                     <th>Apellido</th>

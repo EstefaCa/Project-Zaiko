@@ -88,7 +88,7 @@ if(!isset($_SESSION))
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="categories.html">Todos los préstamos</a>
+                            <a href="Loans.php">Todos los préstamos</a>
                         </li>
                         <li>
                           <a href="new-post.html">Crear préstamo</a>
